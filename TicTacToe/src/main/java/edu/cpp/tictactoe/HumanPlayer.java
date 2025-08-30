@@ -1,4 +1,5 @@
 package edu.cpp.tictactoe;
 
-public class HumanPlayer {
+public class HumanPlayer extends Player{
+    
 }
