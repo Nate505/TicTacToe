@@ -16,7 +16,18 @@ public class Board {
         reset();
     }
 
-    public void printBoard(){
+    // Get a copy of the grid
+    public Mark[][] getGrid() {
+        Mark[][] newGrid = new Mark[size][size];
+        
+        for (int row = 0; row < grid.length; row++)
+            for (int col = 0; col < grid[row].length; col++)
+                newGrid[row][col] = grid[row][col];
+        
+        return newGrid;
+    }
+
+    public void printBoard() {
         for(int row = 0; row < 3; row++){
             System.out.println("|---|---|---|");
             for (int col = 0; col < 3; col++) {
