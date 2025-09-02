@@ -1,15 +1,15 @@
 package edu.cpp.tictactoe;
 
 public abstract class Player {
-    private String symbol;
+    private Mark mark;
 
-    public Player(String symbol){
-        this.symbol = symbol;
+    public Player(Mark mark){
+        this.mark = mark;
     }
 
-    public String getSymbol(){
-        return symbol;
+    public Mark getMark(){
+        return mark;
     }
 
-    public abstract int nextMove(String[] symbol);
+    public abstract Move nextMove(Mark[] mark);
 }
