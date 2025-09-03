@@ -14,7 +14,6 @@ public class Game {
 
     public void run() {
         turn = player1;
-        Board board = new Board();
 
         System.out.println("WELCOME TO TIC TAC TOE!");
 

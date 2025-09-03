@@ -16,6 +16,6 @@ public class HumanPlayer extends Player{
 
         input = kbd.nextInt() - 1;
         
-        return new Move(input / 3, input % 3, getMark());
+        return new Move(input / 3, input % 3, mark);
     }
 }

@@ -102,13 +102,8 @@ public class Board {
         }
 
         // Checks if there is any empty spaces (only runs if there is no winner yet)
-        for (Mark[] row : grid) {
-            for (Mark mark : row) {
-                if (mark == Mark.EMPTY) {
-                    return "No Winner Yet";
-                }       
-            }
-        }
+        if (!isFull())
+            return "No Winner Yet";
 
         // If there is no remaining space, then return draw
         return "Draw";
@@ -140,6 +135,16 @@ public class Board {
                 grid[row][col] = Mark.EMPTY;
             }
         }
+    }
+
+    // Checks if the board is full
+    public boolean isFull() {
+        for (Mark[] row : grid)
+            for (Mark mark : row)
+                if (mark == Mark.EMPTY)
+                    return false;
+
+        return true;
     }
 
 }

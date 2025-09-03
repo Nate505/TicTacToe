@@ -18,11 +18,11 @@ public class RandomAIPlayer extends Player{
         b.printBoard();
         System.out.printf("AI Player chose %d.\n", place + 1);
 
-        return new Move(place / 3, place % 3, getMark()); 
+        return new Move(place / 3, place % 3, mark); 
     }
 
     // Returns places of the board where the mark is EMPTY
-    public ArrayList<Integer> getEmptyCells(Board b) {
+    private ArrayList<Integer> getEmptyCells(Board b) {
         ArrayList<Integer> list = new ArrayList<>();
         Mark[][] grid = b.getGrid();
 
