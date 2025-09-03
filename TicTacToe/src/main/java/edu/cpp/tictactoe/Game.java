@@ -1,4 +1,5 @@
 package edu.cpp.tictactoe;
+import java.util.*;
 
 public class Game {
     private Player turn;
@@ -14,8 +15,6 @@ public class Game {
 
     public void run() {
         turn = player1;
-
-        System.out.println("WELCOME TO TIC TAC TOE!");
 
         do {
             Move move = turn.nextMove(board);
@@ -55,7 +54,32 @@ public class Game {
     }
     
     public static void main(String[] args) {
-        Game game = new Game(new Board(), new HumanPlayer(Mark.X), new RandomAIPlayer(Mark.O));
+        int player = 0;
+        Scanner kbm = new Scanner(System.in);
+        Game game;
+
+        System.out.println("WELCOME TO TIC TAC TOE!");
+        System.out.println("Please Select 1 Player or 2 Player\n(1) 1 Player\n(2) 2 Player");
+
+        while (true) {
+            if (kbm.hasNextInt()) {
+                player = kbm.nextInt();
+                if (player == 1 || player == 2) {
+                    break;
+                } else {
+                    System.out.println("Invalid choice. Please enter 1 or 2:");
+                }
+            } else {
+                System.out.println("That's not a number. Please enter 1 or 2:");
+                kbm.next();
+            }
+        }
+
+        if(player == 1){
+            game = new Game(new Board(), new HumanPlayer(Mark.X), new RandomAIPlayer(Mark.O));
+        } else {
+            game = new Game(new Board(), new HumanPlayer(Mark.X), new HumanPlayer(Mark.O));
+        }
         game.run();
     }
 }
