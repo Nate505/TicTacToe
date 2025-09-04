@@ -1,8 +1,10 @@
 package edu.cpp.tictactoe;
+import java.util.Arrays;
 
 public class Board {
     // Fields
     private Mark[][] grid;
+    private int moves;
     private int size;
 
     // Default constructor — maybe allow for bigger sizes at one point?
@@ -29,16 +31,10 @@ public class Board {
     private String getSymbol(int row, int col) {
         Mark mark = grid[row][col];
 
-        switch (mark) {
-            case X:
-                return "X";
-            case O:
-                return "O";
-            case EMPTY:
-                return Integer.toString(row * 3 + col + 1);
-            default:
-                return "";
-        }
+        if (mark != Mark.EMPTY)
+            return mark.name();
+        else
+            return Integer.toString(row * 3 + col + 1);
     }
 
     // Returns a mark of the given cell
@@ -46,12 +42,13 @@ public class Board {
         return grid[row][col];
     }
 
+    // Returns the size of the board
     public int getSize() {
         return size;
     }
 
     // Checks for winners
-    public String winner(){
+    public Mark winner(){
         for(int i = 0; i < 8; i++){
             String line = null;
 
@@ -91,18 +88,14 @@ public class Board {
             }
 
             if (line.equals("XXX")){
-                return "X";
+                return Mark.X;
             } else if(line.equals("OOO")){
-                return "O";
+                return Mark.O;
             }
         }
 
-        // Checks if there is any empty spaces (only runs if there is no winner yet)
-        if (!isFull())
-            return "No Winner Yet";
-
-        // If there is no remaining space, then return draw
-        return "Draw";
+        // No winner, then return EMPTY
+        return Mark.EMPTY;
     }
 
     // Checks if the the cell is empty (mainly used as a helper method)
@@ -115,39 +108,39 @@ public class Board {
         } catch (Exception e) {
             return false;
         }
-            
     }
 
     // Places a mark depending on the move
     // Returns true if placing is successful, otherwise false 
     public boolean place(Move move){
         // Checks if the cell is empty
-        // Also allows placing if it is removing the mark from the cell
-        if (isCellEmpty(move.row, move.col) || move.mark == Mark.EMPTY) {
+        if (isCellEmpty(move.row, move.col)) {
             grid[move.row][move.col] = move.mark;
+            moves += 1;
             return true;
         }
 
         return false;
     }
 
+    // Resets the cell to EMPTY
+    // Used for undo
+    public void clearCell(int row, int col) {
+        if (grid[row][col] != Mark.EMPTY) {
+            grid[row][col] = Mark.EMPTY;
+            moves -= 1;
+        }
+    }
+
     // Resets the board to only contain EMPTY marks
     public void reset(){
-        for (int row = 0; row < grid.length; row++) {
-            for (int col = 0; col < grid[row].length; col++) {
-                grid[row][col] = Mark.EMPTY;
-            }
-        }
+        for (Mark[] row : grid) Arrays.fill(row, Mark.EMPTY);
+        moves = 0;
     }
 
     // Checks if the board is full
     public boolean isFull() {
-        for (Mark[] row : grid)
-            for (Mark mark : row)
-                if (mark == Mark.EMPTY)
-                    return false;
-
-        return true;
+        return moves >= size * size;
     }
 }
 

@@ -23,26 +23,27 @@ public class Game {
         turn = player1;
 
         // Ask the player for a choice
+        // Runs until the game is over, or the player exits
         do {
             // If the player is human, then ask them for a choice
             if (turn instanceof HumanPlayer)
                 input = choice(kbm);
             else
                 move();
-        } while (board.winner().equals("No Winner Yet") && input != 3);
+        } while (board.winner() == Mark.EMPTY && !board.isFull() && input != 3);
 
         // IF the player did not exit:
         if (input != 3) {
             board.printBoard();
 
             switch (board.winner()) {
-                case "X":
+                case X:
                     System.out.println("Player X Wins the Tic Tac Toe!");
                     break;
-                case "O":
+                case O:
                     System.out.println("Player O Wins the Tic Tac Toe!");
                     break;
-                case "Draw":
+                case EMPTY:
                     System.out.println("This Game Ended in a Draw!");
                     break;
             }
@@ -54,6 +55,7 @@ public class Game {
         }
     }
 
+    // Switches the players turn
     private void switch_turns() {
         if (turn == player1) {
             turn = player2;
@@ -66,11 +68,11 @@ public class Game {
     private void undo() {
         if (!undoStack.empty()) {
             Move move = undoStack.pop();
-            move.mark = Mark.EMPTY;
-            board.place(move);
+            board.clearCell(move.row, move.col);
         }
     }
     
+    // Asks the human player a choice on what to do
     private int choice(Scanner kbm) {
         int input = 0;
 
@@ -100,6 +102,7 @@ public class Game {
         return input;
     }
 
+    // Makes the player move
     private void move() {
         Move move = turn.nextMove(board);
 
