@@ -24,11 +24,10 @@ public class RandomAIPlayer extends Player{
     // Returns places of the board where the mark is EMPTY
     private ArrayList<Integer> getEmptyCells(Board b) {
         ArrayList<Integer> list = new ArrayList<>();
-        Mark[][] grid = b.getGrid();
 
-        for (int row = 0; row < grid.length; row++)
-            for (int col = 0; col < grid[row].length; col++)
-                if (grid[row][col] == Mark.EMPTY)
+        for (int row = 0; row < b.getSize(); row++)
+            for (int col = 0; col < b.getSize(); col++)
+                if (b.getCell(row, col) == Mark.EMPTY)
                     list.add(row * 3 + col);
         
         return list;

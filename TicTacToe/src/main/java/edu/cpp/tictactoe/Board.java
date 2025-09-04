@@ -1,7 +1,5 @@
 package edu.cpp.tictactoe;
 
-import java.util.Arrays;
-
 public class Board {
     // Fields
     private Mark[][] grid;
@@ -14,17 +12,6 @@ public class Board {
         
         // Initializes the grid full of EMPTY marks
         reset();
-    }
-
-    // Get a copy of the grid
-    public Mark[][] getGrid() {
-        Mark[][] newGrid = new Mark[size][size];
-        
-        for (int row = 0; row < grid.length; row++)
-            for (int col = 0; col < grid[row].length; col++)
-                newGrid[row][col] = grid[row][col];
-        
-        return newGrid;
     }
 
     public void printBoard() {
@@ -52,6 +39,15 @@ public class Board {
             default:
                 return "";
         }
+    }
+
+    // Returns a mark of the given cell
+    public Mark getCell(int row, int col) {
+        return grid[row][col];
+    }
+
+    public int getSize() {
+        return size;
     }
 
     // Checks for winners
@@ -111,16 +107,23 @@ public class Board {
 
     // Checks if the the cell is empty (mainly used as a helper method)
     public boolean isCellEmpty(int row, int col){
-        if(grid[row][col] == Mark.EMPTY) 
-            return true;
-        else 
+        try {
+            if(grid[row][col] == Mark.EMPTY) 
+                return true;
+            else 
+                return false;
+        } catch (Exception e) {
             return false;
+        }
+            
     }
 
     // Places a mark depending on the move
     // Returns true if placing is successful, otherwise false 
     public boolean place(Move move){
-        if (isCellEmpty(move.row, move.col)) {
+        // Checks if the cell is empty
+        // Also allows placing if it is removing the mark from the cell
+        if (isCellEmpty(move.row, move.col) || move.mark == Mark.EMPTY) {
             grid[move.row][move.col] = move.mark;
             return true;
         }
@@ -146,6 +149,5 @@ public class Board {
 
         return true;
     }
-
 }
 

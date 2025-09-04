@@ -11,11 +11,17 @@ public class HumanPlayer extends Player{
     public Move nextMove(Board board) {
         Scanner kbd = new Scanner(System.in);
         int input = 0;
-        board.printBoard();
+        
         System.out.println("PLEASE SELECT WHICH CELL:");
 
-        input = kbd.nextInt() - 1;
-        
+        // Try to catch invalid types for ints
+        try {
+            input = kbd.nextInt() - 1;
+        } catch (Exception e) {
+            System.out.println("Invalid input.");
+            input = -1;
+        }
+
         return new Move(input / 3, input % 3, mark);
     }
 }
