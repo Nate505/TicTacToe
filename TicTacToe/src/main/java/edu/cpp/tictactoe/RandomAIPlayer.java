@@ -18,7 +18,7 @@ public class RandomAIPlayer extends Player{
         b.printBoard();
         System.out.printf("AI Player chose %d.\n", place + 1);
 
-        return new Move(place / 3, place % 3, mark); 
+        return new Move(place / b.getSize(), place % b.getSize(), mark); 
     }
 
     // Returns places of the board where the mark is EMPTY
@@ -28,7 +28,7 @@ public class RandomAIPlayer extends Player{
         for (int row = 0; row < b.getSize(); row++)
             for (int col = 0; col < b.getSize(); col++)
                 if (b.getCell(row, col) == Mark.EMPTY)
-                    list.add(row * 3 + col);
+                    list.add(row * b.getSize() + col);
         
         return list;
     }
