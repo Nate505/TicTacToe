@@ -8,6 +8,7 @@ public class Game {
     private Player player2;
     private Player turn;
     private Stack<Move> undoStack; 
+    private static int boardSize = 0;
 
     public Game(Board board, Player player1, Player player2) {
         this.board = board;
@@ -140,11 +141,28 @@ public class Game {
             }
         }
 
+        System.out.println("How big of a board would you like? (n x n) (Minimum of 3 x 3)");
+
+        // Ask player for either 1 player mode or 2 player mode
+        while (true) {
+            if (kbm.hasNextInt()) {
+                boardSize = kbm.nextInt();
+                if (boardSize >= 3) {
+                    break;
+                } else {
+                    System.out.println("Invalid choice. Please enter a number equal or greater than 3:");
+                }
+            } else {
+                System.out.println("That's not a number. Please enter a number equal or greater than 3:");
+                kbm.next();
+            }
+        }
+
         // Start the game on the player's preferences
         if(player == 1){
-            game = new Game(new Board(), new HumanPlayer(Mark.X), new RandomAIPlayer(Mark.O));
+            game = new Game(new Board(boardSize), new HumanPlayer(Mark.X, boardSize), new RandomAIPlayer(Mark.O));
         } else {
-            game = new Game(new Board(), new HumanPlayer(Mark.X), new HumanPlayer(Mark.O));
+            game = new Game(new Board(boardSize), new HumanPlayer(Mark.X, boardSize), new HumanPlayer(Mark.O, boardSize));
         }
 
         game.run();

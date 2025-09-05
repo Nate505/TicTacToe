@@ -2,9 +2,11 @@ package edu.cpp.tictactoe;
 import java.util.Scanner;
 
 public class HumanPlayer extends Player{
+    private int boardSize = 0;
     
-    public HumanPlayer(Mark mark) {
+    public HumanPlayer(Mark mark, int boardSize) {
         super(mark);
+        this.boardSize = boardSize;
     }
 
     @Override
@@ -22,6 +24,6 @@ public class HumanPlayer extends Player{
             input = -1;
         }
 
-        return new Move(input / 3, input % 3, mark);
+        return new Move(input / boardSize, input % boardSize, mark);
     }
 }
