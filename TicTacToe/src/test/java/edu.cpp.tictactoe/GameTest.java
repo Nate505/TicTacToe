@@ -27,7 +27,8 @@ public class GameTest {
         assertEquals(Mark.EMPTY, b.winner());
         assertTrue(b.isFull());
     }
-    
+
+    // ScriptedPlayer acts similar to a human player but has given preset moves
     private class ScriptedPlayer extends Player{
         int turn;
         int[] moveSet;

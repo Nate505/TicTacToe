@@ -5,12 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c38bebbb-284d-450e-854a-d7302f785217" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/TicTacToe/src/main/java/edu/cpp/tictactoe/ConsoleApp.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TicTacToe/src/test/java/edu.cpp.tictactoe/BoardTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TicTacToe/src/test/java/edu.cpp.tictactoe/GameTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/TicTacToe.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/TicTacToe.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TicTacToe/src/main/java/edu/cpp/tictactoe/ConsoleApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/TicTacToe/src/main/java/edu/cpp/tictactoe/ConsoleApp.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TicTacToe/src/main/java/edu/cpp/tictactoe/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/TicTacToe/src/main/java/edu/cpp/tictactoe/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TicTacToe/src/test/java/edu.cpp.tictactoe/GameTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/TicTacToe/src/test/java/edu.cpp.tictactoe/GameTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,35 +33,38 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.ConsoleApp.executor": "Run",
-    "Application.Game.executor": "Run",
-    "Downloaded.Files.Path.Enabled": "false",
-    "JUnit.GameTest.scriptedGameWin.executor": "Run",
-    "JUnit.TicTacToeTest.boardChangeDetected.executor": "Run",
-    "JUnit.TicTacToeTest.boardDrawDetected.executor": "Run",
-    "JUnit.TicTacToeTest.boardNoWinnerYetDetected.executor": "Run",
-    "JUnit.TicTacToeTest.detectMoveOverlap.executor": "Run",
-    "JUnit.TicTacToeTest.executor": "Run",
-    "JUnit.TicTacToeTest.moveOverlapHandling.executor": "Run",
-    "JUnit.TicTacToeTest.rowWinDetected.executor": "Run",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "Repository.Attach.Annotations": "false",
-    "Repository.Attach.JavaDocs": "false",
-    "Repository.Attach.Sources": "false",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "dart.analysis.tool.window.visible": "false",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/Users/nathanielarifin/Desktop/Summer Research/TicTacToe",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.2",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.ConsoleApp.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Game.executor&quot;: &quot;Run&quot;,
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;JUnit.BoardTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.GameTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.GameTest.scriptedGameDraw.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.GameTest.scriptedGameWin.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.TicTacToeTest.boardChangeDetected.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.TicTacToeTest.boardDrawDetected.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.TicTacToeTest.boardNoWinnerYetDetected.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.TicTacToeTest.detectMoveOverlap.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.TicTacToeTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.TicTacToeTest.moveOverlapHandling.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.TicTacToeTest.rowWinDetected.executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/nathanielarifin/Desktop/Summer Research/TicTacToe&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="BoardTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="TicTacToe" />
@@ -167,5 +168,16 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/TicTacToe/src/main/java/edu/cpp/tictactoe/Game.java</url>
+          <line>80</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

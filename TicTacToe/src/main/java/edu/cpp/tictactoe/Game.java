@@ -16,7 +16,7 @@ public class Game {
         this.undoStack = new Stack<>();
     }
 
-    public void run() {
+    public Mark run() {
         Scanner kbm = new Scanner(System.in);
         int input = 0;
         
@@ -46,12 +46,16 @@ public class Game {
                 case EMPTY:
                     System.out.println("This Game Ended in a Draw!");
                     break;
+                default:
+                    throw new RuntimeException("Something went wrong!");
             }
+
+            return board.winner();
         }
         // If the player exited:
         else {
             System.out.println("Exiting game...");
-            return;
+            return Mark.EMPTY;
         }
     }
 
@@ -90,12 +94,16 @@ public class Game {
                 move();
                 break;
             case 2:
-                undo();
-                undo();
+                if (undoStack.empty())
+                    System.out.println("There is no previous moves to undo!");
+                else {
+                    undo();
+                    undo();
+                }
                 break;
             case 3:
                 break;
-            case 4:
+            default:
                 System.out.println("Invalid input!");
         }
 
